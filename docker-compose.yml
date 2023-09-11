@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  web3js-api:
+    container_name: web3js-api
+    image: web3js-api
+    environment:
+      PORT: 3000
+      URL: https://mainnet.infura.io/v3/00000000000000000000000000000000
+    restart: always
+    ports:
+      - 3000:3000

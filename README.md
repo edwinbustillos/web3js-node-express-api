@@ -20,13 +20,18 @@ npm run start
 #### Run with Docker
 ```shell
 #Make image
-docker build -t web3-api .
+docker build -t web3js-api .
 
 #Docker run image
-docker run -it -e "PORT=3000" -e "URL=https://mainnet.infura.io/v3/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" -p 3000:3000 --name web3-api web3-api
+docker run -it -e "PORT=3000" -e "URL=https://mainnet.infura.io/v3/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" -p 3000:3000 --name web3js-api web3js-api
+
+OR
+
+docker compose up -d
+docker compose down 
 
 #Docker run interactive container
-docker exec -it web3-api sh
+docker exec -it web3js-api sh
 
 ```
 
