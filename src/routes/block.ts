@@ -108,7 +108,7 @@ routes.get('/get/:blockNumber', async (req, res) => {
     });
   } catch (err) {
     logger.info('Error: ' + err);
-    res.status(500).json({ erro: 'Error getting block information.' });
+    res.status(500).json({ Error: 'Error getting block information.' });
   }
 });
 
