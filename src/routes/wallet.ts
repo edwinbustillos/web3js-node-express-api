@@ -14,7 +14,7 @@ routes.get('/list', (req, res) => {
     res.json({ accounts: accounts.map((account) => account.address) });
   } catch (err) {
     logger.info('Error: ' + err);
-    res.status(500).json({ error: 'Error listing accounts in wallet.' });
+    res.status(500).json({ Error: 'Error listing accounts in wallet.' });
   }
 });
 
@@ -28,7 +28,7 @@ routes.post('/create', (req, res) => {
     });
   } catch (err) {
     logger.info('Error: ' + err);
-    res.status(500).json({ error: 'Error creating wallet.' });
+    res.status(500).json({ Error: 'Error creating wallet.' });
   }
 });
 
@@ -37,7 +37,7 @@ routes.post('/add', (req, res) => {
   try {
     const { privateKey } = req.body;
     if (!web3.utils.isHexStrict(privateKey)) {
-      return res.status(400).json({ error: 'Chave privada inválida.' });
+      return res.status(400).json({ Error: 'Chave privada inválida.' });
     }
     const account = web3.eth.accounts.privateKeyToAccount(privateKey);
     const walletAdd = web3.eth.accounts.wallet.add(account);
@@ -48,7 +48,7 @@ routes.post('/add', (req, res) => {
     });
   } catch (err) {
     logger.info('Error: ' + err);
-    res.status(500).json({ error: 'Error adding account to wallet.' });
+    res.status(500).json({ Error: 'Error adding account to wallet.' });
   }
 });
 
@@ -66,7 +66,7 @@ routes.post('/remove', (req, res) => {
     res.json({ message: 'Account successfully removed from wallet.' });
   } catch (err) {
     logger.info('Error: ' + err);
-    res.status(500).json({ error: 'Error removing account.' });
+    res.status(500).json({ Error: 'Error removing account.' });
   }
 });
 

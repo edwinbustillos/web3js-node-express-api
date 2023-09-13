@@ -13,7 +13,7 @@ routes.post('/', async (req, res) => {
     const { events } = req.body;
 
     if (!Array.isArray(events) || events.length === 0) {
-      return res.status(400).json({ error: 'Lista de eventos inválida.' });
+      return res.status(400).json({ Error: 'Lista de eventos inválida.' });
     }
 
     const subscriptions: unknown[] = [];
@@ -36,7 +36,7 @@ routes.post('/', async (req, res) => {
     res.json({ message: 'Registering for successful events.' });
   } catch (error) {
     console.error('Error when registering for events:', error);
-    res.status(500).json({ error: 'Error registering for events.' });
+    res.status(500).json({ Error: 'Registering for events.' });
   }
 });
 
