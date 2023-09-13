@@ -16,6 +16,12 @@
 ```javascript
 npm install
 npm run start
+
+//For development
+npm run dev
+
+//Run test case
+npm run test
 ```
 #### Run with Docker
 ```shell
@@ -128,20 +134,6 @@ Return:
         "0x0000000000000000000000000000000000000000000000000000000000000000",
         ...
     ]
-}
-```
----
-
-#### web3.eth.getBalance -> /block/balance
-```curl
-curl --location --request GET 'http://localhost:3000/block/balance/0x0000000000000000000000000000000000000000'
-
-```
-Return:
-```JSON 
-{
-    "address": "0x000000000000000000000000000000000000000",
-    "balance": "000000000.000000000000000000"
 }
 ```
 ---
