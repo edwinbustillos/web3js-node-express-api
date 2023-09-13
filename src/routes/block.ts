@@ -26,7 +26,7 @@ routes.get('/latest', async (req, res) => {
     const blockLatest = await web3.eth.getBlock('latest');
 
     if (!blockLatest) {
-      return res.status(404).json({ error: 'Block not found.' });
+      return res.status(404).json({ Error: 'Block not found.' });
     }
     res.json({
       hash: blockLatest.hash,
@@ -56,7 +56,7 @@ routes.get('/pending', async (req, res) => {
     const blockPending = await web3.eth.getBlock('pending');
 
     if (!blockPending) {
-      return res.status(404).json({ error: 'Block not found.' });
+      return res.status(404).json({ Error: 'Block not found.' });
     }
     res.json({
       hash: blockPending.hash,
@@ -121,7 +121,7 @@ routes.get('/balance/:address', async (req: Request, res: Response) => {
     res.status(200).json({ address, balance: balanceInEther });
   } catch (err) {
     logger.info('Error: ' + err);
-    res.status(500).json({ erro: 'Error when checking balance.' });
+    res.status(500).json({ Error: 'Error when checking balance.' });
   }
 });
 
